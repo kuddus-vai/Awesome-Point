@@ -1,0 +1,7 @@
+{
+  "name": "Awesome Point",
+  "description": "Awesome Point (অসাম পয়েন্ট) — প্রিমিয়াম মেনস ফ্যাশন, ফরমাল ও ক্যাজুয়াল শার্ট, টুইল প্যান্ট, ডেনিম জিন্স ও স্ট্রিটওয়্যার ই-কমার্স স্টোর (ঢাকা, বাংলাদেশ)।",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
