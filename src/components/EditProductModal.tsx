@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
 import { Product, ProductVariant } from '../types';
+import { getImageUrl } from '../utils/imageUrl';
 
 export const EditProductModal: React.FC = () => {
   const { editingProduct, setEditingProduct, updateProduct, deleteProduct, showToast } = useStore();
@@ -786,7 +787,7 @@ export const EditProductModal: React.FC = () => {
                   >
                     <div className="relative aspect-3/4 rounded-lg overflow-hidden bg-neutral-100 mb-2">
                       <img
-                        src={img.url}
+                        src={getImageUrl(img.url)}
                         alt={img.alt}
                         referrerPolicy="no-referrer"
                         className="w-full h-full object-cover"

@@ -467,7 +467,7 @@ export const ProductDetailModal: React.FC = () => {
                           {rev.customerPhoto && (
                             <div className="mt-2 pt-1 flex items-center gap-2">
                               <img
-                                src={rev.customerPhoto}
+                                src={getImageUrl(rev.customerPhoto)}
                                 alt="কাস্টমার ফটো রিভিউ"
                                 referrerPolicy="no-referrer"
                                 className="w-14 h-16 rounded-md object-cover border border-neutral-200 shadow-xs cursor-pointer hover:opacity-90 transition-opacity"

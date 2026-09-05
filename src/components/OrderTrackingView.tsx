@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
 import { Order } from '../types';
+import { getImageUrl } from '../utils/imageUrl';
 
 interface OrderTrackingViewProps {
   initialOrderNumber?: string;
@@ -356,7 +357,7 @@ export const OrderTrackingView: React.FC<OrderTrackingViewProps> = ({
                     {activeOrder.items.map((item, idx) => (
                       <div key={idx} className="flex items-center gap-2.5 bg-white p-2 rounded-lg border border-neutral-200">
                         <img
-                          src={item.imageUrl}
+                          src={getImageUrl(item.imageUrl)}
                           alt={item.productName}
                           referrerPolicy="no-referrer"
                           className="w-10 h-12 rounded object-cover bg-neutral-100 shrink-0"

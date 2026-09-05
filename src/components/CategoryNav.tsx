@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { ChevronLeft, ChevronRight, LayoutGrid } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
+import { getImageUrl } from '../utils/imageUrl';
 
 interface CategoryCardItem {
   id: string;
@@ -139,7 +140,7 @@ export const CategoryNav: React.FC = () => {
             {/* Circular Thumbnail Box */}
             <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden bg-neutral-100 p-1 mb-3 border-2 border-neutral-100 group-hover:border-red-500 transition-colors shadow-xs">
               <img
-                src={cat.image}
+                src={getImageUrl(cat.image)}
                 alt={cat.name}
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-300"

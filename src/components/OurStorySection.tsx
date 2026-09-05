@@ -1,5 +1,6 @@
 import React from 'react';
 import { Award, Check, Sparkles } from 'lucide-react';
+import { getImageUrl } from '../utils/imageUrl';
 
 export const OurStorySection: React.FC = () => {
   return (
@@ -57,7 +58,7 @@ export const OurStorySection: React.FC = () => {
         <div className="lg:col-span-6 relative flex justify-center">
           <div className="relative w-full max-w-md aspect-4/5 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
             <img
-              src="/products/466966518_544520338287715_1158647771518592632_n.jpg"
+              src={getImageUrl("/products/466966518_544520338287715_1158647771518592632_n.jpg")}
               alt="Awesome Point Fashion Showcase"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover"
