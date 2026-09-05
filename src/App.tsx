@@ -22,6 +22,7 @@ import { AdminDashboard } from './components/AdminDashboard';
 import { EditProductModal } from './components/EditProductModal';
 import { FAQSection } from './components/FAQSection';
 import { Footer } from './components/Footer';
+import { getImageUrl } from './utils/imageUrl';
 import {
   ShoppingBag,
   Star,
@@ -209,7 +210,7 @@ const StoreContent: React.FC = () => {
                     }}
                   >
                     <img
-                      src={item.image}
+                      src={getImageUrl(item.image)}
                       alt={item.tag}
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
