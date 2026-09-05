@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
 import { CheckoutModal } from './CheckoutModal';
+import { getImageUrl } from '../utils/imageUrl';
 
 export const CartDrawer: React.FC = () => {
   const {
@@ -95,7 +96,7 @@ export const CartDrawer: React.FC = () => {
                   >
                     {/* Item Thumbnail */}
                     <img
-                      src={item.product.images[0]?.url}
+                      src={getImageUrl(item.product.images[0]?.url)}
                       alt={item.product.nameBn || item.product.name}
                       referrerPolicy="no-referrer"
                       className="w-18 h-22 object-cover object-center rounded-lg bg-neutral-200 border border-neutral-200 shrink-0"

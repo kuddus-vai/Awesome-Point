@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, Heart, ShoppingBag, Trash2, ArrowRight } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
+import { getImageUrl } from '../utils/imageUrl';
 
 export const WishlistDrawer: React.FC = () => {
   const {
@@ -47,7 +48,7 @@ export const WishlistDrawer: React.FC = () => {
                   className="flex gap-3 p-3 rounded-xl border border-neutral-200 bg-neutral-50/50 relative group"
                 >
                   <img
-                    src={prod.images[0]?.url}
+                    src={getImageUrl(prod.images[0]?.url)}
                     alt={prod.nameBn || prod.name}
                     referrerPolicy="no-referrer"
                     className="w-18 h-22 object-cover rounded-lg bg-neutral-200 border border-neutral-200 shrink-0 cursor-pointer"

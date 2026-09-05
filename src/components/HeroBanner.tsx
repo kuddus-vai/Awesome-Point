@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, ChevronLeft, ChevronRight, Layers, Sparkles, Flame } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
+import { getImageUrl } from '../utils/imageUrl';
 
 export const HeroBanner: React.FC = () => {
   const { setActiveCategoryFilter, setViewMode } = useStore();
@@ -120,7 +121,7 @@ export const HeroBanner: React.FC = () => {
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img
-              src={currentSlide.image}
+              src={getImageUrl(currentSlide.image)}
               alt={currentSlide.title}
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover object-center transition-transform duration-700 scale-100"

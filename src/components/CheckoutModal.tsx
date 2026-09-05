@@ -16,6 +16,7 @@ import {
 import { useStore } from '../context/StoreContext';
 import { DELIVERY_ZONES } from '../data/mockData';
 import { Order, Coupon } from '../types';
+import { getImageUrl } from '../utils/imageUrl';
 
 interface CheckoutModalProps {
   onClose: () => void;
@@ -556,7 +557,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ onClose, onOrderCo
                     return (
                       <div key={item.id} className="flex items-center gap-2.5 text-xs">
                         <img
-                          src={item.product.images[0]?.url}
+                          src={getImageUrl(item.product.images[0]?.url)}
                           alt={item.product.nameBn || item.product.name}
                           referrerPolicy="no-referrer"
                           className="w-10 h-12 rounded object-cover bg-neutral-200 border border-neutral-200 shrink-0"

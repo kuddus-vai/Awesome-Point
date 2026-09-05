@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Heart, Star, ShoppingBag, Eye, Check } from 'lucide-react';
 import { Product, ProductVariant } from '../types';
 import { useStore } from '../context/StoreContext';
+import { getImageUrl } from '../utils/imageUrl';
 
 interface ProductCardProps {
   product: Product;
@@ -49,7 +50,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, badgeText }) 
       {/* Product Image Box */}
       <div className="relative aspect-3/4 w-full bg-neutral-100 overflow-hidden">
         <img
-          src={product.images[0]?.url}
+          src={getImageUrl(product.images[0]?.url)}
           alt={product.images[0]?.alt || product.name}
           referrerPolicy="no-referrer"
           className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"

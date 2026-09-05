@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Clock, Sparkles, Zap } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
+import { getImageUrl } from '../utils/imageUrl';
 
 export const PromoBanner: React.FC = () => {
   const { setSelectedProduct, products } = useStore();
@@ -99,7 +100,7 @@ export const PromoBanner: React.FC = () => {
           <div className="md:col-span-5 flex justify-center md:justify-end">
             <div className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 rotate-1 hover:rotate-0 transition-transform duration-300">
               <img
-                src="/products/471497826_580214131395965_5662951532402043813_n.jpg"
+                src={getImageUrl("/products/471497826_580214131395965_5662951532402043813_n.jpg")}
                 alt="অক্সফোর্ড কটন শার্ট স্পেশাল ডিল"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover object-center"

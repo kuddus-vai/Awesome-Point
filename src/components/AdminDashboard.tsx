@@ -21,6 +21,7 @@ import {
 import { useStore } from '../context/StoreContext';
 import { Product, ProductVariant, Order } from '../types';
 import { EditProductModal } from './EditProductModal';
+import { getImageUrl } from '../utils/imageUrl';
 
 export const AdminDashboard: React.FC = () => {
   const {
@@ -353,7 +354,7 @@ export const AdminDashboard: React.FC = () => {
                         title="পণ্য সম্পাদনা করতে ক্লিক করুন"
                       >
                         <img
-                          src={product.images[0]?.url}
+                          src={getImageUrl(product.images[0]?.url)}
                           alt={product.nameBn || product.name}
                           referrerPolicy="no-referrer"
                           className="w-14 h-16 rounded-lg object-cover bg-neutral-100 border border-neutral-200 shrink-0 group-hover:border-neutral-900 transition-colors"

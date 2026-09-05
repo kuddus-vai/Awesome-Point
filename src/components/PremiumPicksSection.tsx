@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, ShoppingBag, Star, Sparkles } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
+import { getImageUrl } from '../utils/imageUrl';
 
 export const PremiumPicksSection: React.FC = () => {
   const { setSelectedProduct, addToCart, products } = useStore();
@@ -42,7 +43,7 @@ export const PremiumPicksSection: React.FC = () => {
           {/* Background image with overlay */}
           <div className="absolute inset-0 z-0">
             <img
-              src={mainProduct.images[0]?.url}
+              src={getImageUrl(mainProduct.images[0]?.url)}
               alt={mainProduct.name}
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-60"
@@ -113,7 +114,7 @@ export const PremiumPicksSection: React.FC = () => {
                 {/* Thumbnail */}
                 <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-lg overflow-hidden bg-neutral-100 flex-shrink-0">
                   <img
-                    src={p.images[0]?.url}
+                    src={getImageUrl(p.images[0]?.url)}
                     alt={p.name}
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform"

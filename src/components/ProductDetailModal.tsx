@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
 import { INITIAL_REVIEWS } from '../data/mockData';
+import { getImageUrl } from '../utils/imageUrl';
 
 export const ProductDetailModal: React.FC = () => {
   const {
@@ -95,7 +96,7 @@ export const ProductDetailModal: React.FC = () => {
               {/* Main Image View */}
               <div className="relative aspect-4/5 w-full bg-neutral-100 rounded-xl overflow-hidden border border-neutral-200">
                 <img
-                  src={selectedProduct.images[activeImageIndex]?.url || selectedProduct.images[0]?.url}
+                  src={getImageUrl(selectedProduct.images[activeImageIndex]?.url || selectedProduct.images[0]?.url)}
                   alt={selectedProduct.nameBn || selectedProduct.name}
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover object-center"
@@ -121,7 +122,7 @@ export const ProductDetailModal: React.FC = () => {
                           : 'border-neutral-200 opacity-70 hover:opacity-100'
                       }`}
                     >
-                      <img src={img.url} alt={img.alt} referrerPolicy="no-referrer" className="w-full h-full object-cover" />
+                      <img src={getImageUrl(img.url)} alt={img.alt} referrerPolicy="no-referrer" className="w-full h-full object-cover" />
                     </button>
                   ))}
                 </div>
